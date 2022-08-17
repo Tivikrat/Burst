@@ -17,7 +17,7 @@ export class ControlledError<T extends Options> extends Error {
             throw new Error('can not construct ValidationError due to arguments error');
         }
 
-        if (!/^[1-5]{1}[0-9]{2}$/.test(String(statusCode))) {
+        if (statusCode < 100 || statusCode > 599) {
             throw new Error(
                 'statusCode in ValidationError should be a number in range from 100 to 599',
             );
@@ -30,5 +30,3 @@ export class ControlledError<T extends Options> extends Error {
         this.data = data;
     }
 }
-
-export type IControlledError = InstanceType<typeof ControlledError>

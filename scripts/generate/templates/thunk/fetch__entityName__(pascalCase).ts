@@ -1,16 +1,8 @@
-// Core
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
-
-// API
-import { API_URL } from '../../../init/constants';
-
-// Tools
+import { API_URL } from '../../../init';
 import { customFetch } from '../../../tools/utils';
-
-// Types
 import * as types from '../types';
 
-// Action
 const fetch__entityName__(pascalCase)Action = createAction('__entityName__/FETCH___entityName__(constantCase)_ASYNC');
 
 export const fetch__entityName__(pascalCase) = createAsyncThunk<types.__entityName__(pascalCase), /* payload type => */ undefined>(

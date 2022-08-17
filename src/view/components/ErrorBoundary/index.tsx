@@ -1,19 +1,16 @@
-// Core
 import React, { Component, FC } from 'react';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 
-// Types
-type State =  {
+type State = {
     error: Error | null;
 }
-
-type PropChilden ={
+type PropChildren = {
     children: React.ReactNode;
 }
-
 type PropTypes = {
     navigation: NavigateFunction
-} & PropChilden;
+} & PropChildren;
+
 class ErrorBoundaryClass extends Component<PropTypes, State> {
     static getDerivedStateFromError(error: Error) {
         return { error };
@@ -36,7 +33,7 @@ class ErrorBoundaryClass extends Component<PropTypes, State> {
     }
 }
 
-export const ErrorBoundary: FC<PropChilden> = ({ children }) => {
+export const ErrorBoundary: FC<PropChildren> = ({ children }) => {
     const navigation = useNavigate();
 
     return (

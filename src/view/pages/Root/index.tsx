@@ -1,25 +1,14 @@
-// Core
-import React, { FC } from 'react';
-
-// Components
+import React from 'react';
 import { ErrorBoundary } from '../../components';
-
-// Elements
 import { HelloBurst } from '../../elements';
-
-// Styles
 import { Container } from './styles';
 
-const Root: FC = () => {
+export default function Root() {
     return (
-        <Container>
-            <HelloBurst />
-        </Container>
+        <ErrorBoundary>
+            <Container>
+                <HelloBurst/>
+            </Container>
+        </ErrorBoundary>
     );
-};
-
-export default () => (
-    <ErrorBoundary>
-        <Root />
-    </ErrorBoundary>
-);
+}

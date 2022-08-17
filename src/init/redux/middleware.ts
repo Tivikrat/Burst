@@ -1,4 +1,3 @@
-// ESlint
 /* eslint-disable array-bracket-newline */
 
 // Middlewares

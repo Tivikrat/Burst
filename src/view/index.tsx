@@ -1,41 +1,31 @@
-// Core
 import React, { FC, useEffect, useCallback } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-
-// Routes
 import { Routes } from './routes';
-
-// Hooks
-import { useTogglesRedux } from '../bus/client/toggles';
-
-// Assets
 import { GlobalStyles, defaultTheme } from '../assets';
+import { setToggle } from '../bus/client/toggles';
 
-// Styles
 export const AppContainer = styled.div`
     height: 100vh;
     width: 100vw;
 `;
 
 export const App: FC = () => {
-    const { setToggleAction: setTogglerAction } = useTogglesRedux();
-
-    const setOnlineStatusHanlder = useCallback(() => void setTogglerAction({
+    const setOnlineStatus = useCallback(() => setToggle({
         type:  'isOnline',
         value: navigator.onLine,
-    }), [ setTogglerAction ]);
+    }), []);
 
     useEffect(() => {
-        setOnlineStatusHanlder();
-        window.addEventListener('online', setOnlineStatusHanlder);
-        window.addEventListener('offline', setOnlineStatusHanlder);
+        setOnlineStatus();
+        window.addEventListener('online', setOnlineStatus);
+        window.addEventListener('offline', setOnlineStatus);
     }, []);
 
     return (
         <ThemeProvider theme = { defaultTheme }>
-            <GlobalStyles />
+            <GlobalStyles/>
             <AppContainer>
-                <Routes />
+                <Routes/>
             </AppContainer>
         </ThemeProvider>
     );

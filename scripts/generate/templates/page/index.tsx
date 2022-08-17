@@ -1,16 +1,8 @@
-// Core
 import React, { FC } from 'react';
-
-// Bus
-// import {} from '../../../bus/'
-
-// Components
 import { ErrorBoundary } from '../../components';
-
-// Styles
 import * as S from './styles';
+// TODO: import {} from '../../../bus/'
 
-// Types
 type PropTypes = {
     /* type props here */
 }

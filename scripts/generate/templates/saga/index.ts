@@ -1,11 +1,6 @@
-// Core
 import { SagaIterator } from '@redux-saga/core';
 import { all, call } from 'redux-saga/effects';
-
-// Tools
 import { useDispatch } from '../../../tools/hooks';
-
-// Watchers & Actions
 import { fetch__entityName__(pascalCase)Action, watchFetch__entityName__(pascalCase) } from './fetch__entityName__(pascalCase)';
 
 export const use__entityName__(pascalCase)Saga = () => {

@@ -1,8 +1,6 @@
-// Core
 import React from 'react';
 import styled from 'styled-components';
 
-// Styles
 const Container = styled.section`
     width: 100%;
     height: 100%;
@@ -44,7 +42,6 @@ const Container = styled.section`
     }
 `;
 
-// Imgages
 import burstLogo from '../../assets/images/burst-logo.png';
 
 export const HelloBurst = () => {
@@ -57,7 +54,7 @@ export const HelloBurst = () => {
                 />
                 <h1>Welcome to <span>Burst.🔥</span></h1>
             </div>
-            <h2>Docs are comming soon...</h2>
+            <h2>Docs are coming soon...</h2>
         </Container>
     );
 };
